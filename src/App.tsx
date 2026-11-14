@@ -110,7 +110,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F7F5] text-[#141416]">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F5] text-[#111111]">
       <Navbar
         activeTab={activeTab}
         onSelectTab={handleNavigateTab}
@@ -155,11 +155,13 @@ export default function App() {
         )}
       </main>
 
-      {/* Clean Editorial Footer with Weekly Newsletter & Navigation */}
-      <footer className="bg-white border-t border-black/10 mt-12">
+      {/* Bold Editorial Footer with Weekly Newsletter & Navigation */}
+      <footer className="bg-white border-t-2 border-[#111111] mt-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-12 grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-4 space-y-3">
-            <span className="font-display text-lg font-bold text-[#141416]">FormShield</span>
+            <span className="font-display text-xl font-extrabold text-[#111111]">
+              FormShield
+            </span>
             <p className="text-sm text-[#52525B] max-w-sm leading-relaxed">
               Wholistic protection in style for phones, earbuds, laptops, and insulated bottles.
               Backed by a 1-year manufacturing defect warranty.
@@ -168,49 +170,49 @@ export default function App() {
 
           <div className="md:col-span-4 grid grid-cols-2 gap-4 text-sm">
             <div className="space-y-2">
-              <p className="text-xs font-semibold text-[#141416]">Store &amp; App</p>
+              <p className="text-xs font-bold text-[#111111]">Store &amp; App</p>
               <button
                 type="button"
                 onClick={() => handleNavigateTab('store')}
-                className="block text-left text-[#52525B] hover:text-[#141416] cursor-pointer"
+                className="block text-left font-medium text-[#52525B] hover:text-[#111111] cursor-pointer"
               >
                 Catalog &amp; Designer Series
               </button>
               <button
                 type="button"
                 onClick={() => handleNavigateTab('studio')}
-                className="block text-left text-[#52525B] hover:text-[#141416] cursor-pointer"
+                className="block text-left font-medium text-[#52525B] hover:text-[#111111] cursor-pointer"
               >
                 Custom Studio
               </button>
               <button
                 type="button"
                 onClick={() => handleNavigateTab('b2b')}
-                className="block text-left text-[#52525B] hover:text-[#141416] cursor-pointer"
+                className="block text-left font-medium text-[#52525B] hover:text-[#111111] cursor-pointer"
               >
                 B2B &amp; Schools
               </button>
             </div>
             <div className="space-y-2">
-              <p className="text-xs font-semibold text-[#141416]">Community &amp; Plan</p>
+              <p className="text-xs font-bold text-[#111111]">Community &amp; Plan</p>
               <button
                 type="button"
                 onClick={() => handleNavigateTab('community')}
-                className="block text-left text-[#52525B] hover:text-[#141416] cursor-pointer"
+                className="block text-left font-medium text-[#52525B] hover:text-[#111111] cursor-pointer"
               >
                 Pop-Ups &amp; KOL Feed
               </button>
               <button
                 type="button"
                 onClick={() => handleNavigateTab('community')}
-                className="block text-left text-[#52525B] hover:text-[#141416] cursor-pointer"
+                className="block text-left font-medium text-[#52525B] hover:text-[#111111] cursor-pointer"
               >
                 1-Yr Warranty Hub
               </button>
               <button
                 type="button"
                 onClick={() => handleNavigateTab('blueprint')}
-                className="block text-left text-[#52525B] hover:text-[#141416] cursor-pointer"
+                className="block text-left font-medium text-[#52525B] hover:text-[#111111] cursor-pointer"
               >
                 Business Model Canvas
               </button>
@@ -218,12 +220,12 @@ export default function App() {
           </div>
 
           <div className="md:col-span-4 space-y-3">
-            <p className="text-xs font-semibold text-[#141416]">
+            <p className="text-xs font-bold text-[#111111]">
               Weekly Newsletter (New Drops &amp; Pop-Up Dates)
             </p>
             {footerSubscribed ? (
-              <p className="text-xs text-[#059669] font-medium">
-                Subscribed {footerEmail} to our weekly newsletter.
+              <p className="text-xs text-[#059669] font-bold">
+                Subscribed {footerEmail} to our weekly newsletter!
               </p>
             ) : (
               <form
@@ -240,11 +242,11 @@ export default function App() {
                   onChange={(e) => setFooterEmail(e.target.value)}
                   placeholder="Email address"
                   aria-label="Footer newsletter email"
-                  className="flex-1 px-3 py-2 text-sm bg-[#F7F7F5] border border-black/15 rounded-lg focus:outline-none focus:border-[#1D4ED8]"
+                  className="flex-1 px-3 py-2 text-sm bg-[#FAF9F5] border-2 border-[#111111] rounded-xl focus:outline-none focus:bg-white"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#141416] hover:bg-[#1D4ED8] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                  className="px-4 py-2 text-xs font-bold text-[#111111] bg-[#C8F135] hover:bg-[#FF6B2C] border-2 border-[#111111] rounded-xl shadow-[2px_2px_0px_0px_#111111] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   Subscribe
                 </button>

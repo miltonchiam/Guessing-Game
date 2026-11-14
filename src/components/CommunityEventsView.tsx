@@ -14,6 +14,8 @@ interface CommunityEventsViewProps {
   onOpenStudioWithCategory: (category: ProductCategory) => void;
 }
 
+const POST_BACKDROPS = ['#C8F135', '#FFE3D3', '#EDE9FE', '#DBEAFE'];
+
 export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
   warranties,
   onRegisterWarranty,
@@ -24,7 +26,6 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSaved, setNewsletterSaved] = useState(false);
 
-  // Warranty lookup / registration state
   const [lookupCode, setLookupCode] = useState('FS-WR-88412');
   const [newWarrantyProduct, setNewWarrantyProduct] = useState('Stride Armor Phone Case');
   const [newWarrantyEmail, setNewWarrantyEmail] = useState('');
@@ -76,18 +77,17 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
 
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-8 lg:py-12 space-y-14">
-      {/* Header */}
-      <div className="pb-6 border-b border-black/10 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+      <div className="pb-6 border-b-2 border-[#111111] flex flex-col lg:flex-row lg:items-end justify-between gap-4">
         <div>
-          <p className="text-xs font-mono text-[#1D4ED8]">
+          <p className="text-xs font-mono font-bold text-[#2563EB]">
             COMPANION APP · DAILY ENGAGEMENT · WEEKLY NEWSLETTER · POP-UP EVENTS
           </p>
-          <h1 className="mt-2 font-display text-3xl font-bold tracking-tight text-[#141416]">
-            Community Feed, Pop-Up Stores &amp; Warranty Hub
+          <h1 className="mt-2 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111111]">
+            Crew Feed, Pop-Up Stores &amp; Warranty Hub
           </h1>
           <p className="mt-1.5 text-sm text-[#52525B] max-w-2xl">
             Daily social drops with KOL athletes, offline pop-up store RSVPs, corporate collab
-            events, weekly newsletter updates, and 1-year warranty management.
+            events, weekly newsletter dispatches, and 1-year warranty management.
           </p>
         </div>
       </div>
@@ -95,25 +95,28 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
       {/* Section 1: Daily Social Engagement & KOL Collaborations */}
       <section className="space-y-6">
         <div className="flex items-baseline justify-between gap-4">
-          <h2 className="font-display text-2xl font-bold text-[#141416]">
+          <h2 className="font-display text-2xl font-extrabold text-[#111111]">
             Daily Social Feed &amp; KOL Drops
           </h2>
-          <span className="text-xs font-mono text-[#52525B]">
+          <span className="text-xs font-mono font-bold text-[#52525B]">
             UPDATED DAILY · ONLINE CHANNELS
           </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {COMMUNITY_POSTS.map((post) => {
+          {COMMUNITY_POSTS.map((post, idx) => {
             const liked = likedIds.includes(post.id);
             const displayLikes = post.likes + (liked ? 1 : 0);
 
             return (
               <article
                 key={post.id}
-                className="bg-white border border-black/10 rounded-xl overflow-hidden flex flex-col justify-between"
+                className="bg-white border-2 border-[#111111] rounded-2xl shadow-[4px_4px_0px_0px_#111111] overflow-hidden flex flex-col justify-between transition-transform hover:-translate-y-1"
               >
-                <div className="aspect-[4/3] bg-[#F2F2EE] p-4 flex items-center justify-center">
+                <div
+                  className="aspect-[4/3] border-b-2 border-[#111111] p-4 flex items-center justify-center"
+                  style={{ backgroundColor: POST_BACKDROPS[idx % POST_BACKDROPS.length] }}
+                >
                   <ProductArtwork
                     category={post.gearCategory}
                     shellHex={post.shellHex}
@@ -124,25 +127,25 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
 
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                   <div>
-                    <div className="flex items-center justify-between text-xs text-[#52525B]">
+                    <div className="flex items-center justify-between text-xs font-medium text-[#52525B]">
                       <span>{post.dayLabel}</span>
-                      <span>{post.segment}</span>
+                      <span className="font-bold text-[#111111]">{post.segment}</span>
                     </div>
-                    <h3 className="mt-2 font-display text-base font-semibold text-[#141416]">
+                    <h3 className="mt-2 font-display text-lg font-extrabold text-[#111111]">
                       {post.author}
                     </h3>
-                    <p className="text-xs text-[#1D4ED8]">{post.role}</p>
-                    <p className="mt-2.5 text-sm text-[#52525B] leading-relaxed">
+                    <p className="text-xs font-bold text-[#2563EB]">{post.role}</p>
+                    <p className="mt-2.5 text-sm text-[#3F3F46] leading-relaxed">
                       {post.caption}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-black/10 flex items-center justify-between gap-2">
+                  <div className="pt-3 border-t-2 border-[#111111]/10 flex items-center justify-between gap-2">
                     <button
                       type="button"
                       onClick={() => toggleLike(post.id)}
-                      className={`inline-flex items-center gap-1.5 text-xs font-medium cursor-pointer transition-colors ${
-                        liked ? 'text-[#DC2626]' : 'text-[#52525B] hover:text-[#141416]'
+                      className={`inline-flex items-center gap-1.5 text-xs font-bold cursor-pointer transition-colors ${
+                        liked ? 'text-[#F43F5E]' : 'text-[#52525B] hover:text-[#111111]'
                       }`}
                     >
                       <Heart
@@ -155,9 +158,9 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
                     <button
                       type="button"
                       onClick={() => onOpenStudioWithCategory(post.gearCategory)}
-                      className="text-xs font-semibold text-[#141416] hover:text-[#1D4ED8] cursor-pointer"
+                      className="text-xs font-bold text-[#111111] hover:text-[#2563EB] cursor-pointer"
                     >
-                      Build Similar →
+                      Remix Look →
                     </button>
                   </div>
                 </div>
@@ -170,10 +173,10 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
       {/* Section 2: Offline Pop-Up Stores & Corporate Collab Events */}
       <section className="space-y-6">
         <div className="flex items-baseline justify-between gap-4">
-          <h2 className="font-display text-2xl font-bold text-[#141416]">
+          <h2 className="font-display text-2xl font-extrabold text-[#111111]">
             Offline Pop-Up Stores &amp; Corporate Events
           </h2>
-          <span className="text-xs font-mono text-[#52525B]">
+          <span className="text-xs font-mono font-bold text-[#52525B]">
             CHANNELS · IN-PERSON &amp; BRAND COLLABS
           </span>
         </div>
@@ -186,23 +189,23 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
             return (
               <div
                 key={evt.id}
-                className="bg-white border border-black/10 rounded-xl p-6 flex flex-col justify-between space-y-5"
+                className="bg-white border-2 border-[#111111] rounded-2xl shadow-[4px_4px_0px_0px_#111111] p-6 flex flex-col justify-between space-y-5"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#52525B]">
-                    <span className="font-semibold text-[#1D4ED8]">{evt.type}</span>
-                    <span>{evt.partner}</span>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-bold text-[#2563EB]">{evt.type}</span>
+                    <span className="font-medium text-[#52525B]">{evt.partner}</span>
                   </div>
-                  <h3 className="mt-2 font-display text-lg font-bold text-[#141416]">
+                  <h3 className="mt-2 font-display text-xl font-extrabold text-[#111111]">
                     {evt.title}
                   </h3>
-                  <div className="mt-3 space-y-1.5 text-xs text-[#52525B]">
+                  <div className="mt-3 space-y-1.5 text-xs font-medium text-[#3F3F46]">
                     <p className="flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5 text-[#141416]" aria-hidden="true" />
+                      <Calendar className="w-3.5 h-3.5 text-[#111111]" aria-hidden="true" />
                       <span>{evt.date}</span>
                     </p>
                     <p className="flex items-center gap-2">
-                      <MapPin className="w-3.5 h-3.5 text-[#141416]" aria-hidden="true" />
+                      <MapPin className="w-3.5 h-3.5 text-[#111111]" aria-hidden="true" />
                       <span>{evt.location}</span>
                     </p>
                   </div>
@@ -211,20 +214,20 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-black/10 flex items-center justify-between gap-4">
-                  <span className="font-mono text-xs text-[#52525B] tabular-nums">
+                <div className="pt-4 border-t-2 border-[#111111]/10 flex items-center justify-between gap-4">
+                  <span className="font-mono text-xs font-bold text-[#111111] tabular-nums">
                     {spots} spots open
                   </span>
                   <button
                     type="button"
                     onClick={() => toggleRsvp(evt.id)}
-                    className={`px-4 py-2 text-xs font-semibold rounded-lg transition-colors cursor-pointer whitespace-nowrap ${
+                    className={`px-4 py-2 text-xs font-bold rounded-xl border-2 border-[#111111] shadow-[2px_2px_0px_0px_#111111] transition-all cursor-pointer whitespace-nowrap ${
                       isGoing
-                        ? 'bg-[#059669] text-white'
-                        : 'bg-[#141416] text-white hover:bg-[#1D4ED8]'
+                        ? 'bg-[#C8F135] text-[#111111]'
+                        : 'bg-[#FF6B2C] hover:bg-[#FF8552] text-[#111111]'
                     }`}
                   >
-                    {isGoing ? 'RSVP Confirmed' : 'Reserve Spot'}
+                    {isGoing ? 'RSVP Confirmed!' : 'Reserve Spot'}
                   </button>
                 </div>
               </div>
@@ -236,26 +239,26 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
       {/* Section 3: Weekly Newsletter & 1-Year Warranty Portal */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Weekly Newsletter */}
-        <div className="lg:col-span-5 bg-white border border-black/10 rounded-xl p-6 sm:p-8 flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-[#C8F135] border-2 border-[#111111] rounded-2xl shadow-[6px_6px_0px_0px_#111111] p-6 sm:p-8 flex flex-col justify-between">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-[#1D4ED8]">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#111111]">
               <Mail className="w-4 h-4" aria-hidden="true" />
               <span>WEEKLY NEWSLETTER · CUSTOMER RELATIONSHIP</span>
             </div>
-            <h2 className="mt-3 font-display text-2xl font-bold text-[#141416]">
-              Weekly Gear &amp; Healthy Lifestyle Dispatch
+            <h2 className="mt-3 font-display text-2xl font-extrabold text-[#111111]">
+              Weekly Gear &amp; Active Dispatch
             </h2>
-            <p className="mt-2 text-sm text-[#52525B] leading-relaxed">
-              Once every week: new Designer Series drops, pop-up store dates, running &amp; gym
-              hydration guides, and early access to custom colors.
+            <p className="mt-2 text-sm text-[#27272A] leading-relaxed">
+              Once every week: fresh Designer Series drops, pop-up store dates, running &amp; gym
+              hydration guides, and early access to custom colorways.
             </p>
           </div>
 
           <form onSubmit={handleNewsletterSubmit} className="mt-6 space-y-3">
             {newsletterSaved ? (
-              <div className="p-4 bg-[#ECFDF5] border border-[#059669]/25 rounded-lg text-sm text-[#065F46]">
+              <div className="p-4 bg-white border-2 border-[#111111] rounded-xl text-sm font-bold text-[#111111]">
                 Subscribed <span className="font-mono">{newsletterEmail}</span> to our weekly
-                dispatch.
+                dispatch!
               </div>
             ) : (
               <div className="flex flex-col sm:flex-row gap-2.5">
@@ -266,11 +269,11 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="you@domain.com"
                   aria-label="Newsletter email address"
-                  className="flex-1 px-4 py-2.5 text-sm bg-[#F7F7F5] border border-black/15 rounded-lg text-[#141416] focus:outline-none focus:border-[#1D4ED8]"
+                  className="flex-1 px-4 py-2.5 text-sm bg-white border-2 border-[#111111] rounded-xl text-[#111111] focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="px-5 py-2.5 text-sm font-semibold text-white bg-[#141416] hover:bg-[#1D4ED8] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                  className="px-5 py-2.5 text-sm font-bold text-white bg-[#111111] hover:bg-[#2563EB] border-2 border-[#111111] rounded-xl transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   Join Weekly
                 </button>
@@ -280,25 +283,22 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
         </div>
 
         {/* 1-Year Manufacturing Defect Warranty Verification & Registration */}
-        <div className="lg:col-span-7 bg-white border border-black/10 rounded-xl p-6 sm:p-8 space-y-6">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-2 text-xs font-mono text-[#059669]">
-                <ShieldCheck className="w-4 h-4" aria-hidden="true" />
-                <span>1-YEAR MANUFACTURING DEFECT WARRANTY</span>
-              </div>
-              <h2 className="mt-2 font-display text-2xl font-bold text-[#141416]">
-                Warranty Lookup &amp; Registration
-              </h2>
+        <div className="lg:col-span-7 bg-white border-2 border-[#111111] rounded-2xl shadow-[6px_6px_0px_0px_#111111] p-6 sm:p-8 space-y-6">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#059669]">
+              <ShieldCheck className="w-4 h-4" aria-hidden="true" />
+              <span>1-YEAR MANUFACTURING DEFECT WARRANTY</span>
             </div>
+            <h2 className="mt-2 font-display text-2xl font-extrabold text-[#111111]">
+              Warranty Lookup &amp; Registration
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Lookup */}
             <div className="space-y-3">
               <label
                 htmlFor="warranty-lookup"
-                className="block text-xs font-semibold text-[#141416]"
+                className="block text-xs font-bold text-[#111111]"
               >
                 Verify Existing Warranty Code
               </label>
@@ -308,40 +308,39 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
                 value={lookupCode}
                 onChange={(e) => setLookupCode(e.target.value)}
                 placeholder="e.g. FS-WR-88412"
-                className="w-full px-3.5 py-2 text-sm font-mono uppercase bg-[#F7F7F5] border border-black/15 rounded-lg text-[#141416] focus:outline-none focus:border-[#1D4ED8]"
+                className="w-full px-3.5 py-2 text-sm font-mono font-bold uppercase bg-[#FAF9F5] border-2 border-[#111111] rounded-xl text-[#111111] focus:outline-none focus:bg-white"
               />
               {matchedWarranty ? (
-                <div className="p-3.5 bg-[#F7F7F5] border border-black/10 rounded-lg text-xs space-y-1">
+                <div className="p-3.5 bg-[#FAF9F5] border-2 border-[#111111] rounded-xl text-xs space-y-1">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono font-semibold text-[#141416]">
+                    <span className="font-mono font-bold text-[#111111]">
                       {matchedWarranty.code}
                     </span>
-                    <span className="font-semibold text-[#059669]">
+                    <span className="font-bold text-[#059669]">
                       {matchedWarranty.status}
                     </span>
                   </div>
-                  <p className="text-[#141416] font-medium">{matchedWarranty.productName}</p>
+                  <p className="text-[#111111] font-semibold">{matchedWarranty.productName}</p>
                   <p className="text-[#52525B] font-mono">
                     Valid: {matchedWarranty.purchaseDate} → {matchedWarranty.expiresDate}
                   </p>
                 </div>
               ) : (
-                <p className="text-xs text-[#71717A]">
+                <p className="text-xs text-[#52525B]">
                   Sample codes: {INITIAL_WARRANTIES.map((w) => w.code).join(', ')}
                 </p>
               )}
             </div>
 
-            {/* Register */}
             <form onSubmit={handleWarrantyRegister} className="space-y-3">
-              <span className="block text-xs font-semibold text-[#141416]">
+              <span className="block text-xs font-bold text-[#111111]">
                 Register New Gear Protection
               </span>
               <select
                 value={newWarrantyProduct}
                 onChange={(e) => setNewWarrantyProduct(e.target.value)}
                 aria-label="Select purchased product"
-                className="w-full px-3 py-2 text-sm bg-[#F7F7F5] border border-black/15 rounded-lg text-[#141416] focus:outline-none focus:border-[#1D4ED8]"
+                className="w-full px-3 py-2 text-sm font-medium bg-[#FAF9F5] border-2 border-[#111111] rounded-xl text-[#111111] focus:outline-none focus:bg-white"
               >
                 <option>Stride Armor Phone Case</option>
                 <option>Pulse Lock Earbud Shell</option>
@@ -357,17 +356,17 @@ export const CommunityEventsView: React.FC<CommunityEventsViewProps> = ({
                   onChange={(e) => setNewWarrantyEmail(e.target.value)}
                   placeholder="Owner email"
                   aria-label="Owner email for warranty"
-                  className="flex-1 px-3 py-2 text-sm bg-[#F7F7F5] border border-black/15 rounded-lg text-[#141416] focus:outline-none focus:border-[#1D4ED8]"
+                  className="flex-1 px-3 py-2 text-sm bg-[#FAF9F5] border-2 border-[#111111] rounded-xl text-[#111111] focus:outline-none focus:bg-white"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-[#141416] hover:bg-[#1D4ED8] rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                  className="px-4 py-2 text-xs font-bold text-[#111111] bg-[#FF6B2C] hover:bg-[#FF8552] border-2 border-[#111111] rounded-xl transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   Register
                 </button>
               </div>
               {warrantyNotice && (
-                <p className="text-xs font-medium text-[#059669]">{warrantyNotice}</p>
+                <p className="text-xs font-bold text-[#059669]">{warrantyNotice}</p>
               )}
             </form>
           </div>

@@ -402,65 +402,65 @@ export const ProductArtwork: React.FC<ProductArtworkProps> = ({
 
 export const HeroGearShowcase: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[360px] lg:min-h-[460px] bg-[#ECECE8] border border-black/10 rounded-xl overflow-hidden flex flex-col justify-between p-6 lg:p-8">
-      <div className="flex items-center justify-between text-xs font-mono text-[#52525B]">
+    <div className="relative w-full h-full min-h-[360px] lg:min-h-[460px] bg-[#C8F135] border-2 border-[#111111] rounded-2xl shadow-[6px_6px_0px_0px_#111111] overflow-hidden flex flex-col justify-between p-6 lg:p-8">
+      <div className="flex items-center justify-between text-xs font-mono font-bold text-[#111111]">
         <span>4-PIECE ACTIVE SYSTEM</span>
         <span>1-YR WARRANTY</span>
       </div>
 
       <div className="grid grid-cols-2 gap-4 my-auto py-4">
-        <div className="bg-white/85 border border-black/5 rounded-lg p-3 flex flex-col items-center">
+        <div className="bg-white border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center -rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
           <div className="w-full h-32">
             <ProductArtwork
               category="phone"
               shellHex="#18181B"
-              accentHex="#2563EB"
+              accentHex="#C8F135"
               pattern="ridge"
               addon="tether"
             />
           </div>
-          <span className="mt-1 text-xs font-medium text-[#141416]">Stride Phone Armor</span>
+          <span className="mt-1 text-xs font-bold text-[#111111]">Stride Phone Armor</span>
         </div>
-        <div className="bg-white/85 border border-black/5 rounded-lg p-3 flex flex-col items-center">
+        <div className="bg-[#FFE3D3] border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
           <div className="w-full h-32">
             <ProductArtwork
               category="bottle"
-              shellHex="#18181B"
-              accentHex="#2563EB"
+              shellHex="#2563EB"
+              accentHex="#C8F135"
               pattern="solid"
               addon="hydration-loop"
             />
           </div>
-          <span className="mt-1 text-xs font-medium text-[#141416]">HydraGuard 750ml</span>
+          <span className="mt-1 text-xs font-bold text-[#111111]">HydraGuard 750ml</span>
         </div>
-        <div className="bg-white/85 border border-black/5 rounded-lg p-3 flex flex-col items-center">
+        <div className="bg-[#EDE9FE] border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
           <div className="w-full h-32">
             <ProductArtwork
               category="earbuds"
-              shellHex="#1D4ED8"
-              accentHex="#F4F4F0"
+              shellHex="#FF6B2C"
+              accentHex="#111111"
               pattern="solid"
               addon="carabiner"
             />
           </div>
-          <span className="mt-1 text-xs font-medium text-[#141416]">Pulse Earbud Shell</span>
+          <span className="mt-1 text-xs font-bold text-[#111111]">Pulse Earbud Shell</span>
         </div>
-        <div className="bg-white/85 border border-black/5 rounded-lg p-3 flex flex-col items-center">
+        <div className="bg-white border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center -rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
           <div className="w-full h-32">
             <ProductArtwork
               category="laptop"
-              shellHex="#27272A"
-              accentHex="#2563EB"
+              shellHex="#18181B"
+              accentHex="#FF6B2C"
               pattern="carbon"
             />
           </div>
-          <span className="mt-1 text-xs font-medium text-[#141416]">Transit 14" Sleeve</span>
+          <span className="mt-1 text-xs font-bold text-[#111111]">Transit 14&quot; Sleeve</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-3 border-t border-black/10 text-xs text-[#52525B]">
+      <div className="flex items-center justify-between pt-3 border-t-2 border-[#111111] text-xs font-semibold text-[#111111]">
         <span>Phones · Earbuds · Laptops · Bottles</span>
-        <span className="font-mono text-[#141416] font-medium">Custom or Designer Series</span>
+        <span className="font-mono font-bold">Custom or Designer Series</span>
       </div>
     </div>
   );
