@@ -402,65 +402,65 @@ export const ProductArtwork: React.FC<ProductArtworkProps> = ({
 
 export const HeroGearShowcase: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[360px] lg:min-h-[460px] bg-[#C8F135] border-2 border-[#111111] rounded-2xl shadow-[6px_6px_0px_0px_#111111] overflow-hidden flex flex-col justify-between p-6 lg:p-8">
-      <div className="flex items-center justify-between text-xs font-mono font-bold text-[#111111]">
+    <div className="relative w-full h-full min-h-[360px] lg:min-h-[460px] bg-[#141D2F] border border-white/15 rounded-sm overflow-hidden flex flex-col justify-between p-6 lg:p-8">
+      <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8]">
         <span>4-PIECE ACTIVE SYSTEM</span>
         <span>1-YR WARRANTY</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 my-auto py-4">
-        <div className="bg-white border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center -rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
-          <div className="w-full h-32">
+      <div className="grid grid-cols-2 gap-3.5 my-auto py-4">
+        <div className="bg-[#F4F4F4] rounded-sm p-3 flex flex-col items-center group">
+          <div className="w-full h-32 transition-transform duration-200 group-hover:scale-105">
             <ProductArtwork
               category="phone"
-              shellHex="#18181B"
-              accentHex="#C8F135"
+              shellHex="#111111"
+              accentHex="#0047FF"
               pattern="ridge"
               addon="tether"
             />
           </div>
-          <span className="mt-1 text-xs font-bold text-[#111111]">Stride Phone Armor</span>
+          <span className="mt-1 text-xs font-semibold text-[#0A0A0A]">Stride Phone Armor</span>
         </div>
-        <div className="bg-[#FFE3D3] border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
-          <div className="w-full h-32">
+        <div className="bg-[#F4F4F4] rounded-sm p-3 flex flex-col items-center group">
+          <div className="w-full h-32 transition-transform duration-200 group-hover:scale-105">
             <ProductArtwork
               category="bottle"
-              shellHex="#2563EB"
-              accentHex="#C8F135"
+              shellHex="#4E5B3C"
+              accentHex="#F3E16B"
               pattern="solid"
               addon="hydration-loop"
             />
           </div>
-          <span className="mt-1 text-xs font-bold text-[#111111]">HydraGuard 750ml</span>
+          <span className="mt-1 text-xs font-semibold text-[#0A0A0A]">HydraGuard 750ml</span>
         </div>
-        <div className="bg-[#EDE9FE] border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
-          <div className="w-full h-32">
+        <div className="bg-[#F4F4F4] rounded-sm p-3 flex flex-col items-center group">
+          <div className="w-full h-32 transition-transform duration-200 group-hover:scale-105">
             <ProductArtwork
               category="earbuds"
-              shellHex="#FF6B2C"
-              accentHex="#111111"
+              shellHex="#0047FF"
+              accentHex="#F4F4F4"
               pattern="solid"
               addon="carabiner"
             />
           </div>
-          <span className="mt-1 text-xs font-bold text-[#111111]">Pulse Earbud Shell</span>
+          <span className="mt-1 text-xs font-semibold text-[#0A0A0A]">Pulse Earbud Shell</span>
         </div>
-        <div className="bg-white border-2 border-[#111111] rounded-xl p-3 flex flex-col items-center -rotate-1 hover:rotate-0 transition-transform duration-200 shadow-[3px_3px_0px_0px_#111111]">
-          <div className="w-full h-32">
+        <div className="bg-[#F4F4F4] rounded-sm p-3 flex flex-col items-center group">
+          <div className="w-full h-32 transition-transform duration-200 group-hover:scale-105">
             <ProductArtwork
               category="laptop"
-              shellHex="#18181B"
-              accentHex="#FF6B2C"
+              shellHex="#4A3525"
+              accentHex="#F3E16B"
               pattern="carbon"
             />
           </div>
-          <span className="mt-1 text-xs font-bold text-[#111111]">Transit 14&quot; Sleeve</span>
+          <span className="mt-1 text-xs font-semibold text-[#0A0A0A]">Transit 14&quot; Sleeve</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-3 border-t-2 border-[#111111] text-xs font-semibold text-[#111111]">
+      <div className="flex items-center justify-between pt-3 border-t border-white/15 text-xs text-[#CBD5E1]">
         <span>Phones · Earbuds · Laptops · Bottles</span>
-        <span className="font-mono font-bold">Custom or Designer Series</span>
+        <span className="font-mono text-white font-semibold">Custom or Designer Series</span>
       </div>
     </div>
   );

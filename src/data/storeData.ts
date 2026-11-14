@@ -46,21 +46,21 @@ export const CUSTOMER_SEGMENTS: {
 ];
 
 export const STUDIO_SHELL_COLORS: ProductColorVariant[] = [
-  { name: 'Acid Lime', shellHex: '#C8F135', accentHex: '#111111' },
-  { name: 'Tangerine Pop', shellHex: '#FF6B2C', accentHex: '#111111' },
-  { name: 'Cobalt Splash', shellHex: '#2563EB', accentHex: '#C8F135' },
-  { name: 'Lilac Haze', shellHex: '#C4B5FD', accentHex: '#111111' },
-  { name: 'Jet Ink', shellHex: '#18181B', accentHex: '#C8F135' },
-  { name: 'Cream Chalk', shellHex: '#F3EFE6', accentHex: '#FF6B2C' },
+  { name: 'Jet Black', shellHex: '#111111', accentHex: '#0047FF' },
+  { name: 'Future Navy', shellHex: '#141D2F', accentHex: '#F3E16B' },
+  { name: 'Pure Olive', shellHex: '#4E5B3C', accentHex: '#111111' },
+  { name: 'Power Cobalt', shellHex: '#0047FF', accentHex: '#FFFFFF' },
+  { name: 'Hot Chocolate', shellHex: '#4A3525', accentHex: '#F3E16B' },
+  { name: 'Open Air', shellHex: '#8BB8E8', accentHex: '#141D2F' },
 ];
 
 export const STUDIO_ACCENT_SWATCHES: { name: string; hex: string }[] = [
-  { name: 'Acid Lime', hex: '#C8F135' },
-  { name: 'Tangerine Pop', hex: '#FF6B2C' },
-  { name: 'Cobalt Splash', hex: '#2563EB' },
-  { name: 'Jet Ink', hex: '#111111' },
-  { name: 'Coral Track', hex: '#F43F5E' },
-  { name: 'Mint Fizz', hex: '#34D399' },
+  { name: 'Power Cobalt', hex: '#0047FF' },
+  { name: 'Butter Yellow', hex: '#F3E16B' },
+  { name: 'Cherry Lacquer', hex: '#8E1B24' },
+  { name: 'Jet Black', hex: '#111111' },
+  { name: 'Pure Olive', hex: '#4E5B3C' },
+  { name: 'Chalk White', hex: '#F4F4F4' },
 ];
 
 export const PRODUCTS: Product[] = [
@@ -84,9 +84,9 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Jet / Acid Lime', shellHex: '#18181B', accentHex: '#C8F135' },
-      { name: 'Cobalt / Tangerine', shellHex: '#2563EB', accentHex: '#FF6B2C' },
-      { name: 'Lilac / Jet', shellHex: '#C4B5FD', accentHex: '#111111' },
+      { name: 'Jet Black / Cobalt', shellHex: '#111111', accentHex: '#0047FF' },
+      { name: 'Pure Olive / Black', shellHex: '#4E5B3C', accentHex: '#111111' },
+      { name: 'Future Navy / Butter', shellHex: '#141D2F', accentHex: '#F3E16B' },
     ],
     defaultPattern: 'ridge',
     defaultAddon: 'tether',
@@ -112,9 +112,9 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Tangerine / Jet', shellHex: '#FF6B2C', accentHex: '#111111' },
-      { name: 'Acid Lime / Cobalt', shellHex: '#C8F135', accentHex: '#2563EB' },
-      { name: 'Jet / Coral', shellHex: '#18181B', accentHex: '#F43F5E' },
+      { name: 'Power Cobalt / White', shellHex: '#0047FF', accentHex: '#F4F4F4' },
+      { name: 'Jet Black / Cherry', shellHex: '#111111', accentHex: '#8E1B24' },
+      { name: 'Pure Olive / Butter', shellHex: '#4E5B3C', accentHex: '#F3E16B' },
     ],
     defaultPattern: 'solid',
     defaultAddon: 'carabiner',
@@ -140,9 +140,9 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Jet / Tangerine', shellHex: '#18181B', accentHex: '#FF6B2C' },
-      { name: 'Cobalt / Lime', shellHex: '#2563EB', accentHex: '#C8F135' },
-      { name: 'Cream / Cobalt', shellHex: '#F3EFE6', accentHex: '#2563EB' },
+      { name: 'Jet Black / Cobalt', shellHex: '#111111', accentHex: '#0047FF' },
+      { name: 'Hot Chocolate / Butter', shellHex: '#4A3525', accentHex: '#F3E16B' },
+      { name: 'Future Navy / White', shellHex: '#141D2F', accentHex: '#F4F4F4' },
     ],
     defaultPattern: 'carbon',
     defaultAddon: 'none',
@@ -168,9 +168,9 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Cobalt / Acid Lime', shellHex: '#2563EB', accentHex: '#C8F135' },
-      { name: 'Cream / Tangerine', shellHex: '#F3EFE6', accentHex: '#FF6B2C' },
-      { name: 'Jet / Mint Fizz', shellHex: '#18181B', accentHex: '#34D399' },
+      { name: 'Future Navy / Cobalt', shellHex: '#141D2F', accentHex: '#0047FF' },
+      { name: 'Pure Olive / Butter', shellHex: '#4E5B3C', accentHex: '#F3E16B' },
+      { name: 'Jet Black / Cherry', shellHex: '#111111', accentHex: '#8E1B24' },
     ],
     defaultPattern: 'solid',
     defaultAddon: 'hydration-loop',
@@ -189,7 +189,7 @@ export const PRODUCTS: Product[] = [
     dropRating: '3.2m Drop Tested',
     material: 'Bio-based polycarbonate + laser-etched contour grip',
     summary:
-      'Designer Series edition crafted with endurance trail KOL Maya Lin, featuring tactile elevation contours and bold bumper accents.',
+      'Designer Series edition crafted with endurance trail KOL Maya Lin, featuring tactile elevation contours and tactical bumper accents.',
     specs: [
       'Laser-etched topographic grip surface',
       'Raised 1.6mm screen and lens bezel',
@@ -197,8 +197,8 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Acid Lime / Jet', shellHex: '#C8F135', accentHex: '#111111' },
-      { name: 'Jet / Coral Track', shellHex: '#18181B', accentHex: '#F43F5E' },
+      { name: 'Pure Olive / Butter', shellHex: '#4E5B3C', accentHex: '#F3E16B' },
+      { name: 'Cherry Lacquer / Black', shellHex: '#8E1B24', accentHex: '#111111' },
     ],
     defaultPattern: 'topo',
     defaultAddon: 'tether',
@@ -225,8 +225,8 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Tangerine / Acid Lime', shellHex: '#FF6B2C', accentHex: '#C8F135' },
-      { name: 'Lilac / Cobalt', shellHex: '#C4B5FD', accentHex: '#2563EB' },
+      { name: 'Open Air / Future Navy', shellHex: '#8BB8E8', accentHex: '#141D2F' },
+      { name: 'Butter / Jet Black', shellHex: '#F3E16B', accentHex: '#111111' },
     ],
     defaultPattern: 'stripe',
     defaultAddon: 'hydration-loop',
@@ -253,8 +253,8 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Jet / Tangerine', shellHex: '#18181B', accentHex: '#FF6B2C' },
-      { name: 'Cobalt / Acid Lime', shellHex: '#2563EB', accentHex: '#C8F135' },
+      { name: 'Jet Black / Power Cobalt', shellHex: '#111111', accentHex: '#0047FF' },
+      { name: 'Cherry Lacquer / White', shellHex: '#8E1B24', accentHex: '#F4F4F4' },
     ],
     defaultPattern: 'carbon',
     defaultAddon: 'carabiner',
@@ -281,8 +281,8 @@ export const PRODUCTS: Product[] = [
       '1-year manufacturing defect warranty included',
     ],
     colors: [
-      { name: 'Lilac / Jet', shellHex: '#C4B5FD', accentHex: '#111111' },
-      { name: 'Cream / Tangerine', shellHex: '#F3EFE6', accentHex: '#FF6B2C' },
+      { name: 'Hot Chocolate / Butter', shellHex: '#4A3525', accentHex: '#F3E16B' },
+      { name: 'Future Navy / Open Air', shellHex: '#141D2F', accentHex: '#8BB8E8' },
     ],
     defaultPattern: 'stripe',
     defaultAddon: 'none',

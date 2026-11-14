@@ -24,13 +24,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenCart,
 }) => {
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF9F5]/95 backdrop-blur-sm border-b-2 border-[#111111]">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-black/10">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-8">
         {/* Zone 1: Single-element Brand Wordmark */}
         <button
           type="button"
           onClick={() => onSelectTab('store')}
-          className="font-display text-2xl font-extrabold tracking-tight text-[#111111] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#2563EB] focus-visible:outline-offset-4"
+          className="font-display text-2xl font-extrabold tracking-tight text-[#0A0A0A] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#0047FF] focus-visible:outline-offset-4"
         >
           FormShield
         </button>
@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Zone 2: 5 concise single-line text nav links */}
         <nav
           aria-label="Primary navigation"
-          className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold"
+          className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium"
         >
           {NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
@@ -47,10 +47,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={item.id}
                 type="button"
                 onClick={() => onSelectTab(item.id)}
-                className={`py-1 transition-colors whitespace-nowrap shrink-0 cursor-pointer border-b-[3px] ${
+                className={`py-1 transition-colors whitespace-nowrap shrink-0 cursor-pointer border-b-2 ${
                   isActive
-                    ? 'text-[#111111] border-[#FF6B2C]'
-                    : 'text-[#52525B] border-transparent hover:text-[#111111]'
+                    ? 'text-[#0A0A0A] font-semibold border-[#0A0A0A]'
+                    : 'text-[#6B7280] border-transparent hover:text-[#0A0A0A]'
                 }`}
               >
                 {item.label}
@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             onClick={onOpenCart}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-[#111111] bg-[#C8F135] hover:bg-[#FF6B2C] border-2 border-[#111111] rounded-xl shadow-[3px_3px_0px_0px_#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#2563EB] focus-visible:outline-offset-2"
+            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-[#0A0A0A] hover:bg-[#0047FF] rounded-sm transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#0047FF] focus-visible:outline-offset-2"
           >
             <ShoppingBag className="w-4 h-4" aria-hidden="true" />
             <span className="tabular-nums">Bag ({cartCount})</span>
@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Compact mobile horizontal nav bar below 768px */}
-      <div className="md:hidden border-t border-[#111111]/15 px-4 py-2 flex items-center gap-4 overflow-x-auto">
+      <div className="md:hidden border-t border-black/10 px-4 py-2 flex items-center gap-4 overflow-x-auto">
         {NAV_ITEMS.map((item) => {
           const isActive = activeTab === item.id;
           return (
@@ -81,10 +81,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               key={item.id}
               type="button"
               onClick={() => onSelectTab(item.id)}
-              className={`text-xs font-semibold py-1 whitespace-nowrap shrink-0 cursor-pointer border-b-2 ${
+              className={`text-xs font-medium py-1 whitespace-nowrap shrink-0 cursor-pointer border-b-2 ${
                 isActive
-                  ? 'text-[#111111] border-[#FF6B2C]'
-                  : 'text-[#52525B] border-transparent'
+                  ? 'text-[#0A0A0A] font-semibold border-[#0A0A0A]'
+                  : 'text-[#6B7280] border-transparent'
               }`}
             >
               {item.label}
