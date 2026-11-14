@@ -1,0 +1,6 @@
+{
+  "name": "FormShield — Active Gear Protection & Custom Studio",
+  "description": "Customizable protective gear webstore and lifestyle companion app for phones, earbuds, laptops, and insulated bottles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
